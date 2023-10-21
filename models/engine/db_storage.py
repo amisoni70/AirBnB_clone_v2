@@ -117,6 +117,6 @@ class DBStorage:
 
     def close(self):
         """
-        calls remove() on private session attribute (self.session)
+        closes the working sqlalchemy session
         """
-        self.__session.remove()
+        self.__session.close()
