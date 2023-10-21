@@ -20,7 +20,6 @@ class State(BaseModel, Base):
 
     __tablename__ = "states"
     name = Column(String(128), nullable=False)
-    """
     cities = relationship(
                             "City",
                             backref="state",
@@ -38,4 +37,3 @@ class State(BaseModel, Base):
             if city.state_id == self.id:
                 state_cities.append(city)
         return (state_cities)
-    """
