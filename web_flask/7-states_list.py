@@ -22,7 +22,7 @@ def states_list():
     A method to render a list of states
     present
     """
-    states = storage.all(State)
+    states = sorted(storage.all(State).values(), key=lambda state: state.name)
     return render_template("7-states_list.html", states=states)
 
 
